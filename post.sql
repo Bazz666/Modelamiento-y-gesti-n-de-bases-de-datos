@@ -31,8 +31,22 @@ INSERT INTO post (Nombre_de_usuario, fecha_de_creacion, contenido, descripcion,t
 --9. Crear una nueva tabla, llamada comentarios, con los atributos id, fecha y hora de creación,contenido, que se relacione con la tabla posts. (1 punto)
 CREATE TABLE comentarios (id SERIAL, Fecha_y_hora TIMESTAMP,contenido VARCHAR(25) ,identificador INT, PRIMARY KEY(id),FOREIGN KEY (identificador) REFERENCES post(id));
 
+--10. Crear 2 comentarios para el post de "Pamela" y 4 para "Carlos" (0.4 puntos)
+INSERT INTO comentarios (fecha_y_hora, contenido, identificador) VALUES ('03-04-21 18:33:00', 'Carlos: Hola Pamela', 1);
+INSERT INTO comentarios (fecha_y_hora, contenido, identificador) VALUES ('03-04-21 18:33:00', 'Pedro: Hola Pamela', 1);
 
-
-10. Crear 2 comentarios para el post de "Pamela" y 4 para "Carlos" (0.4 puntos)
-11. Crear un nuevo post para "Margarita" (1 punto)
-12. Ingresar 5 comentarios para el post de Margarita. (1 punto)
+INSERT INTO comentarios (fecha_y_hora, contenido, identificador) VALUES ('03-04-21 18:33:00', 'Pamela: Hola Carlos', 6);
+INSERT INTO comentarios (fecha_y_hora, contenido, identificador) VALUES ('03-04-21 18:33:00', 'pamela: como estas', 6);
+INSERT INTO comentarios (fecha_y_hora, contenido, identificador) VALUES ('03-04-21 18:33:00', 'Pedro: Hola Carlos', 6);
+INSERT INTO comentarios (fecha_y_hora, contenido, identificador) VALUES ('03-04-21 18:33:00', 'Pedro: Como andas', 6);
+--11. Crear un nuevo post para "Margarita" (1 punto)
+INSERT INTO post (Nombre_de_usuario, fecha_de_creacion, contenido, descripcion) VALUES ('Margarita', '03-04-21', 'Hola mundo, me atrase ', 'Primer post de Margarita');
+--olvide el titulo--
+UPDATE post SET titulo = 'post7' WHERE id =7;
+--12. Ingresar 5 comentarios para el post de Margarita. (1 punto)
+INSERT INTO comentarios (fecha_y_hora, contenido, identificador) VALUES ('03-04-21 18:33:00', 'Margarita: Hola Carlos', 7);
+INSERT INTO comentarios (fecha_y_hora, contenido, identificador) VALUES ('03-04-21 18:33:00', 'Margarita: Hola Pamela', 7);
+INSERT INTO comentarios (fecha_y_hora, contenido, identificador) VALUES ('03-04-21 18:33:00', 'Margarita: Hola Pedro', 7);
+INSERT INTO comentarios (fecha_y_hora, contenido, identificador) VALUES ('03-04-21 18:33:00', 'Margarita: como estan?', 7);
+INSERT INTO comentarios (fecha_y_hora, contenido, identificador) VALUES ('03-04-21 18:33:00', 'Margarita: me atrase', 7);
+----
